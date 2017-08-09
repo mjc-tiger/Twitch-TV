@@ -22,12 +22,18 @@ $(document).ready(function(){
     for (var i=0;i<followers.length;i++){
       urlStatus = "https://wind-bow.glitch.me/twitch-api/streams/"+followers[i];
       $.getJSON(urlStatus, function(data3){
-        if (data3.stream === null){
-          $("body").append("<h2>tak!</h2>");
+        if (data3.stream != null){
+          var logo = data3.stream.channel.logo;
+          var name = data3.stream.channel.display_name;
+          var status = data3.stream.channel.status;
+          // $("p").append(" "+name+" ");
         } else {
-          $("body").append("<h3>nie!</h3>");
+          // $("body").append("<h3>NIE, streamuje!</h3>");
         }
       })
     }
   });
+  
+
+
 });
