@@ -41,4 +41,51 @@ body {
       text-decoration: underline;
       color: #ff912b; }
 
+.search-bar {
+  text-align: center; }
+  .search-bar input {
+    font-size: 1.1rem;
+    width: 40%;
+    padding: 0.5em;
+    text-decoration: none;
+    box-sizing: border-box;
+    background-color: #d7d7d7;
+    border: 4px solid #0099e4;
+    border-radius: 50px;
+    transition: width 0.4s ease-in-out; }
+  .search-bar input:focus {
+    width: 50%;
+    border: 4px solid #ff912b;
+    border-radius: 50px; }
+
+.search-info {
+  text-align: center;
+  margin: 15px 0px 0px 0px; }
+  .search-info button {
+    background-color: #0099e4;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.7em;
+    border: none; }
+  .search-info button:hover {
+    background-color: #ff912b; }
+
+.details {
+  float: left;
+  width: 35%;
+  background-color: #7e0019;
+  height: auto; }
+  .details .details-header {
+    letter-spacing: 5px;
+    text-align: center; }
+
+.main {
+  float: left;
+  width: 65%;
+  background-color: green;
+  height: 80px; }
+  .main .maintwitchTV {
+    height: auto; }
+
 /*# sourceMappingURL=style.css.map */

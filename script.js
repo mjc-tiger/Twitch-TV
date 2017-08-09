@@ -26,14 +26,13 @@ $(document).ready(function(){
           var logo = data3.stream.channel.logo;
           var name = data3.stream.channel.display_name;
           var status = data3.stream.channel.status;
-          // $("p").append(" "+name+" ");
+          // $(".mtTV-left").html('');
         } else {
-          // $("body").append("<h3>NIE, streamuje!</h3>");
+          // $(".mtTV-right").append("<h3>NIE, streamuje!</h3>");
         }
       })
     }
   });
-  
 
 
 });
