@@ -94,25 +94,22 @@ body {
 .details {
   float: left;
   width: 35%;
-  background-color: #7e0019;
   height: auto; }
   .details .details-header {
     letter-spacing: 5px;
     text-align: center; }
   .details .details-context {
-    background-color: gold; }
+    text-align: justify; }
 
 .main {
   float: left;
   width: 65%;
-  background-color: green;
   height: auto; }
   .main .main-twitchTV {
     height: auto;
     margin-left: 15px;
     margin-bottom: 5px; }
     .main .main-twitchTV .mtTV-left {
-      background-color: grey;
       width: 70%;
       float: left; }
       .main .main-twitchTV .mtTV-left img {
@@ -123,13 +120,18 @@ body {
       .main .main-twitchTV .mtTV-left h2 {
         font-size: 2.5rem;
         margin: 0; }
+      .main .main-twitchTV .mtTV-left a {
+        text-decoration: none;
+        color: white; }
+      .main .main-twitchTV .mtTV-left a:hover {
+        color: #ff912b; }
       .main .main-twitchTV .mtTV-left p {
         margin: 0; }
     .main .main-twitchTV .mtTV-right {
       float: left;
       height: auto;
       width: 30%;
-      background-color: #005b24;
+      background-color: #0099e4;
       text-align: center; }
       .main .main-twitchTV .mtTV-right h2 {
         margin-top: 25px; }
