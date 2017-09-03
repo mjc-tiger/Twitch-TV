@@ -10,21 +10,69 @@ $(document).ready(function() {
       followers.push(name);
     }
     console.log(followers);
+
+
     for (let i=0; i<followers.length; i++){
       var streamURL = 'https://wind-bow.gomix.me/twitch-api/streams/' + followers[i] + '?callback=?';
-      $.getJSON(streamURL, function(data2){
+      $.getJSON(streamURL, function(data){
         var game, status;
-        if (data2.stream === null){
-          game ="Offline";
-          status = "offline";
-        } else if (data2.stream === undefined){
+        if (data.stream === null){
+          game ="offline";
+          status = "OFFLINE";
+        } else if (data.stream === undefined){
           game = "Account closed or does not exist";
-          status = "offline";
+          status = "OFFLINE";
         } else {
-          game = data2.stream.game;
-          status = "online";
+          game = data.stream.game;
+          status = "ONLINE";
         };
-        console.log(game);
+        // console.log(game);
+        var channelURL = "https://wind-bow.gomix.me/twitch-api/channels/" + followers[i] + "?callback=?";
+        $.getJSON(channelURL, function(data){
+          
+          //logo's definition 
+          var logo;
+          if (data.logo != null){
+            logo = data.logo;
+          } else {
+            logo = "https://www.agrolok.pl/Content/img/empty_photo.png";
+          }
+          console.log(logo);
+
+          //name's definition
+          var name;
+          if (data.display_name !=null){
+            name = data.display_name;
+          } else {
+            name = followers[i];
+          }
+          // console.log(name);
+
+          // status and description's definition
+          var description;
+          if (status === "ONLINE"){
+            description = game + ': ' + data.status;
+          } else {
+            description = "offline";
+          }
+          // console.log(description);
+          var website = "<div class='main-twitchTV'>"+
+          "<div class='mtTV-left'>"+
+            "<img src='"+logo+"'>"+
+            '<h2><a href="' + data.url + '" target="_blank">'+name+'</a></h2>'+
+            "<p>"+description+"</p>"+
+          "</div>"+
+          "<div class='mtTV-right'>"+
+            "<h2>"+status+"</h2>"+
+          "</div>"+
+          "<div style='clear:both;'></div><hr></div>";
+
+          status === "ONLINE" ? $(".main").prepend(website) : $(".main").append(website);
+
+
+
+
+        });
       });
       
 
