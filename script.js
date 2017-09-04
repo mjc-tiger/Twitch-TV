@@ -1,6 +1,6 @@
 $(document).ready(function() {
   //An array from "Use the Twitchtv JSON API project (fCC)
-  var followers = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", "comster404", "brunofin","kółeczko"];
+  var followers = ["MedryBW","ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", "comster404", "brunofin","kółeczko"];
 
   //aditional Twitchtv users - fCC followers
   var followersURL = "https://wind-bow.glitch.me/twitch-api/users/freecodecamp/follows/channels";
@@ -37,7 +37,7 @@ $(document).ready(function() {
           } else {
             logo = "https://www.agrolok.pl/Content/img/empty_photo.png";
           }
-          console.log(logo);
+          // console.log(logo);
 
           //name's definition
           var name;
@@ -68,40 +68,23 @@ $(document).ready(function() {
           "<div style='clear:both;'></div><hr></div>";
 
           status === "ONLINE" ? $(".main").prepend(website) : $(".main").append(website);
-
-
-
-
         });
       });
-      
-
     };
+    // $(".select").click(function() {
+    //   var stat = $(".select").attr('id');
+    //   console.log(stat);
+    //   if (stat === "all") {
+    //     alert("all");
+    //   } else if (stat === "online") {
+    //     alert("on");
+    //   } else {
+    //     alert("off");
+    //   }
+    // })
 
-
-
-
-
-    
   });
-    
-
-
-
-    
-          
-          // $(".main-twitchTV").prepend("<div class='main-twitchTV'>"+
-          // "<div class='mtTV-left'>"+
-          //   "<img src='"+logo+"'>"+
-          //   "<h2>"+name+"</h2>"+
-          //   "<p>"+status+"</p>"+
-          // "</div>"+
-          // "<div class='mtTV-right'>"+
-          //   "<h2>OFFLINE</h2>"+
-          // "</div>"+
-          // "<div style='clear:both;'></div><hr></div>");
-        
-        // console.log(data3);
+  
   
 
   // Initialize the scroll button
@@ -119,7 +102,6 @@ $(document).ready(function() {
     } else {
       $("#scroll-btn").fadeOut();
     }
-
   });
 
   // fix the details container when scrolled
